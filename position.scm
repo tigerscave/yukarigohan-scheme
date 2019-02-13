@@ -3,10 +3,10 @@
   (+ n 1)))
 
 (define length
- (lambda (lat)
+ (lambda (x)
   (cond
-   ((null? lat) 0)
-    (else (add1 (length (cdr lat)))))))
+   ((null? x) 0)
+    (else (add1 (length (cdr x)))))))
 
 (print (length '(a b c d e f g)))
 
