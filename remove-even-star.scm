@@ -3,14 +3,14 @@
   (and (not (pair? x))(not (null? x)))))
 
 (define remove-even*
- (lambda (lat)
+ (lambda (l)
   (cond
-   ((null? lat)(quote ()))
-   ((atom? (car lat))
+   ((null? l)(quote ()))
+   ((atom? (car l))
     (cond
-     ((even? (car lat))(remove-even* (cdr lat)))
-     (else (cons (car lat)(remove-even* (cdr lat))))))
-    (else (cons (remove-even* (car lat))(remove-even* (cdr lat)))))))
+     ((even? (car l))(remove-even* (cdr l)))
+     (else (cons (car l)(remove-even* (cdr l))))))
+    (else (cons (remove-even* (car l))(remove-even* (cdr l)))))))
 
 (print (remove-even* '((1)(2 3)((4) 5) 6 (7) 8)))
 (print (remove-even* '(((100) 200) (29) (300 45 (80)))))
